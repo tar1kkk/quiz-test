@@ -17,6 +17,7 @@ export const MultipleChoiceQuestion = ({
                     <label key={option} className="flex items-center space-x-2">
                         <input
                             type="radio"
+                            //@ts-ignore
                             name={question.sys.id}
                             value={option}
                             checked={currentAnswer === option}

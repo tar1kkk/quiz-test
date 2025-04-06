@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { QuizResults } from '../types/quiz';
-import { processQuizResults } from '../lib/algolia';
+
 
 export const ResultsScreen = ({ answers }: { answers: Record<string, string> }) => {
     const [results, setResults] = useState<QuizResults | null>(null);

@@ -35,12 +35,11 @@ export const QuizPage = () => {
 
             <div className="mb-4">
                 <h2 className="text-xl font-bold">
-                    Step {currentStep + 1} of {steps.length}: {steps[currentStep]?.title}
+                    Step {currentStep + 1} of {steps.length}: {steps[currentStep]?.fields.title}
                 </h2>
             </div>
-
             <div className="space-y-6 flex-grow">
-                {currentQuestions.map((question) => (
+                {currentQuestions.map((question : any) => (
                     <div key={question.sys.id}>
                         <QuestionRenderer
                             question={question}

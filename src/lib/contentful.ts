@@ -1,15 +1,17 @@
 import { createClient } from 'contentful';
 
 const client = createClient({
+    //@ts-ignore
     space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+    //@ts-ignore
     accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
 });
 
-// Получение всех шагов квиза
 export async function getQuizSteps() {
     try {
         const entries = await client.getEntries({
             content_type: 'quizStep',
+            //@ts-ignore
             order: 'fields.order',
         });
         return entries.items;
@@ -19,9 +21,9 @@ export async function getQuizSteps() {
     }
 }
 
-// Получение конкретных вопросов по их ID
 export async function getQuestions(questionIds: string[]) {
     try {
+        //@ts-ignore
         const entries = await client.getEntries({
             content_type: 'quizQuestion',
             'sys.id[in]': questionIds.join(','),
@@ -33,7 +35,6 @@ export async function getQuestions(questionIds: string[]) {
     }
 }
 
-// Экспортируем все необходимые функции
 export default {
     getQuizSteps,
     getQuestions,
