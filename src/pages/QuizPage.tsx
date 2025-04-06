@@ -35,7 +35,7 @@ export const QuizPage = () => {
 
             <div className="mb-4">
                 <h2 className="text-xl font-bold">
-                    Step {currentStep + 1} of {steps.length}: {steps[currentStep]?.fields.title}
+                    Step {currentStep + 1} of {steps.length}: {(steps[currentStep] as any).title}
                 </h2>
             </div>
             <div className="space-y-6 flex-grow">
